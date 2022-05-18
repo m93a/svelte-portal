@@ -1,0 +1,58 @@
+{
+  "name": "@m93a/svelte-portal",
+  "version": "3.0.2",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/m93a/svelte-portal.git"
+  },
+  "keywords": [
+    "svelte",
+    "portal"
+  ],
+  "contributors": [
+    {
+      "name": "Thomas Juster",
+      "url": "https://github.com/ThomasJuster"
+    },
+    {
+      "name": "Roman Rodych",
+      "url": "https://github.com/romkor"
+    },
+    {
+      "name": "Michal Grňo",
+      "url": "https://github.com/m93a"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m93a/svelte-portal/issues"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/kit": "next",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-svelte3": "^4.0.0",
+    "prettier": "^2.5.1",
+    "prettier-plugin-svelte": "^2.5.0",
+    "svelte": "^3.44.0",
+    "svelte-check": "^2.2.6",
+    "svelte-preprocess": "^4.10.1",
+    "svelte2tsx": "^0.5.10",
+    "tslib": "^2.3.1",
+    "typescript": "~4.6.2"
+  },
+  "type": "module",
+  "packageManager": "yarn@3.2.1",
+  "types": "./Portal.svelte.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    "./Portal.svelte": "./Portal.svelte"
+  }
+}
