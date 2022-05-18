@@ -1,6 +1,10 @@
 {
   "name": "@m93a/svelte-portal",
-  "version": "3.0.0",
+  "version": "3.0.1",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
@@ -56,5 +60,6 @@
     "typescript": "~4.6.2"
   },
   "type": "module",
-  "packageManager": "yarn@3.2.1"
+  "packageManager": "yarn@3.2.1",
+  "types": "./Portal.svelte.d.ts"
 }
