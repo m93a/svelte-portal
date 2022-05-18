@@ -1,38 +1,55 @@
-# create-svelte
+Svelte component for rendering outside the DOM of parent component
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Idea borrowed from here: https://github.com/sveltejs/svelte/issues/3088#issuecomment-505785516
 
-## Creating a project
+# Installation
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm init svelte
-
-# create a new project in my-app
-npm init svelte my-app
+```sh
+npm install --save svelte-portal
 ```
 
-## Developing
+or
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```sh
+yarn add svelte-portal
 ```
 
-## Building
+# Usage Portal component
 
-To create a production version of your app:
+The `<Portal />` component has only one property: `target`
 
-```bash
-npm run build
+target can be a HTMLElement `target={document.body}` or a css selector `target="#modals"` that points to an already existing element.
+
+When no target is given it defaults to: `document.body`.
+
+## Example
+
+```html
+<script>
+  import Portal from "svelte-portal";
+</script>
+
+<Portal target="body">
+  <div class="toast">Entity successfully updated!</div>
+</Portal>
 ```
 
-You can preview the production build with `npm run preview`.
+# Usage portal action
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+The functionality can also be applied to DOM elements directly via a svelte action:
+
+## Example
+
+```html
+<script>
+  import { portal } from "svelte-portal";
+</script>
+
+<div class="toast" use:portal={"body"} hidden>Entity successfully updated!</div>
+```
+
+The `hidden` atrribute is only needed when using ssr, when portal has moved the element to it's targetted location it removes the hidden attribute.
+
+## TypeScript support
+
+`<script lang="ts">` users should import from `"svelte-portal/src/Portal.svelte"` instead of `"svelte-portal"` to get typing support.
